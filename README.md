@@ -1,5 +1,6 @@
 # Laporan Proyek Machine Learning
----
+This project is a part of Dicoding's Applied Machine Learning Class Project.
+
 ## Project Overview
 
 Kita tentu sering mendengar kalimat "Buku adalah jendela dunia", mungkin seberapa dari kita sudah mengetahui arti dari kalimat tersebut. Tetapi bagi yang belum, kalimat tersebut menggambarkan betapa pentingnya buku karena buku adalah sumber ilmu yang tentu tidak ada habisnya. Menurut [11] membaca buku memiliki banyak manfaat, salah satunya adalah dapat mencegah penurunan kognitif yang diakibatkanusia. Oleh karena itu kita harus membudidayakan budaya membaca. Kita dapat membaca melewati buku fisik ataupun buku digital/E-Book. Di bidang Machine Learning kita dapat berkontribusi dalam membudidayakan budaya membaca dengan banyak cara, salah satunya adalah dengan membuat recommendation system agar kita semua dapat membaca sesuai dengan apa yang kita suka.
