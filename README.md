@@ -1,85 +1,85 @@
-# Laporan Proyek Machine Learning
+# Machine Learning Project Report
 Project resources that have been used to help build this model are listed below in the reference area. Please cite this GitHub Repository page if you used our model as a guidance reference. Images that have been used in this markdown may not be rendered due to one or another reason, please try refreshing the page to see the image rendered.
 
 ## Project Overview
 
-Kita tentu sering mendengar kalimat "Buku adalah jendela dunia", mungkin seberapa dari kita sudah mengetahui arti dari kalimat tersebut. Tetapi bagi yang belum, kalimat tersebut menggambarkan betapa pentingnya buku karena buku adalah sumber ilmu yang tentu tidak ada habisnya. Menurut [11] membaca buku memiliki banyak manfaat, salah satunya adalah dapat mencegah penurunan kognitif yang diakibatkanusia. Oleh karena itu kita harus membudidayakan budaya membaca. Kita dapat membaca melewati buku fisik ataupun buku digital/E-Book. Di bidang Machine Learning kita dapat berkontribusi dalam membudidayakan budaya membaca dengan banyak cara, salah satunya adalah dengan membuat recommendation system agar kita semua dapat membaca sesuai dengan apa yang kita suka.
+We certainly often hear the phrase "Books are windows to the world", maybe how many of us already know the meaning of that sentence. But for those who haven't, this sentence illustrates how important books are because books are an endless source of knowledge. According to [11] reading books has many benefits, one of which is that it can prevent cognitive decline caused by age. Therefore we must cultivate a culture of reading. We can read through physical books or digital books / E-Books. In the field of Machine Learning, we can contribute to cultivating a reading culture in many ways, one of which is by creating a recommendation system so that we can all read according to what we like.
 
 ## Business Understanding
 
-Dari penjelasan pada bagian Project Overview kita mengetahui bahwa sistem rekomendasi dapat membantu membudidayakan budaya membaca buku. Tetapi bagi pelaku bisnis apa keuntungannya? Jawabannya bisa bermacam-macam, salah satunya adalah jika kita memiliki bisnis toko buku, kita dapat mengembangkan sistem rekomendasi yang dapat merekomendasikan user/pelanggan buku berdasarkan kategori buku apa yang mereka suka, sehingga bisnis toko buku-pun dapat meraih keuntungan berkat terjualnya buku-buku yang direkomendasikan oleh sistem.
+From the explanation in the Project Overview section, we know that a recommendation system can help cultivate a culture of reading books. But for business people what are the benefits? The answers can vary, one of which is that if we have a bookstore business, we can develop a recommendation system that can recommend book users/customers based on what category of books they like, so that the bookstore business can also benefit from the sale of books. recommended by the system.
 
 ### Problem Statements
 
-Tentu kita harus memiliki tujuan/goal. Untuk membuat goal tersebut kita harus memiliki permasalahan, atau pada project ini adalah sebagai berikut:
-- Bagaimana membuat sistem rekomendasi dengan teknik **content base filtering**?
-- Bagaimana kecocokan rekomendasi buku yang diberikan dengan kesesuaian user?
-- Bagaimana sistem rekomendasi dapat membantu dibidang bisnis?
+Of course, we must have a goal. To make this goal we must have a problem, or in this project, it is as follows:
+- How to make a recommendation system with the **content base filtering** technique?
+- How is the suitability of the book recommendations given to the suitability of the user?
+- How can a recommendation system help in the business sector?
 
 ### Goals
 
-Kita dapat membuat goal dari permasalah diatas. Goal pada project ini adalah sebagai berikut:
-- Membuat recommendation system berdasarkan kesukaan user
-- Mengetahui kecocokan rekomendasi terhadap user
-- Melihat apakah model/sistem cocok untuk dipakai dibidang bisnis
+We can make goals from the problems above. The goals for this project are as follows:
+- Create a recommendation system based on user preferences
+- Knowing the suitability of recommendations to users
+- See if the model/system is suitable for use in the business field
 
 ### Solution statements
 
-Agar bisa menjawab permasalahan yang telah diuraikan diatas kita bisa membuat Solution sebagai berikut:
-- Menerapkan teknik personalized recommendation system
-- Melihat apakah kategori buku yang kita pernah baca, terdapat pada hasil rekomendasi
-- Mengevaluasi hasil dari pernyataan solution statement kedua untuk menentukan apakah cocok untuk digunakan dibidang bisnis
+In order to be able to answer the problems described above, we can create a solution as follows:
+- Implementing personalized recommendation system techniques
+- See if the categories of books we've read are listed in the recommendations
+- Evaluate the results of the second solution statement to determine whether it is suitable for use in the business field
 
 ## Data Understanding
 
 ![insightdata](https://drive.google.com/uc?export=view&id=1YYGyqpuzy-I7fKDSJnktaX3U6162Mi1y)
 
-Dataset yang akan saya pakai pada project ini memiliki 2  folder pada directory yaitu: 'Book reviews' dan 'Books Data with Category Language and Summary', disini saya akan pakai folder kedua yaitu 'Books Data with Category Language and Summary'. Di dalam folder ini kita akan menjumpai file yang bernama 'Preprocessed_data.csv', file inilah yang berisi rangkuman dari folder pertama. Jumlah data yang terdapat pada file ini juga cukup banyak yaitu 1031175. Untuk melihat ataupun mendownload dataset bisa melewati link berikut: [Kaggle]
+The dataset that I will use in this project has 2 folders in the directory, namely: 'Book reviews' and 'Books Data with Category Language and Summary', here I will use the second folder, namely 'Books Data with Category Language and Summary' '. Inside this folder we will find a file called 'Preprocessed_data.csv', this file contains a summary of the first folder. The amount of data contained in this file is also quite large, namely 1031175. To view or download the dataset, you can go through the following link: [Kaggle]
 
-Variabel-variabel pada Book-Crossing: User review ratings dataset adalah sebagai berikut:
-- user_id : user id
-- location : lokasi user
-- age : umur user
-- isbn : kode ISBN buku tersebut
-- rating : rating buku tersebut
-- book_title : judul buku tersebut
-- book_author : pengarang/penulis dari buku tersebut
-- year_of_publication : tahun publikasi
-- publisher	: penerbit buku
-- Summary : rangkuman buku
-- Language : bahasa dari buku
-- Category : kategori buku
-- city : kota dari lokasi user
-- state : negara bagian dari lokasi user
-- country : negara dari lokasi user
+The variables in the Book-Crossing: User review rating dataset are as follows:
+- user_id: user-id
+- location: user location
+- age: user age
+- ISBN: the book's ISBN code
+- rating: rating the book
+- book_title: the title of the book
+- book_author: the author/author of the book
+- year_of_publication: year of publication
+- publisher: book publisher
+- Summary: book summary
+- Language: the language of the book
+- Category: book category's
+- city: city from user location
+- state: state of user's location
+- country: country of user's location
 
-Sebelum kita masuk ke tahap Univariate Analysis, kita akan drop row 'Unamed: 0', 'img_s', 'img_m', 'img_l', 'Summary', 'location' karena column tersebut tidak terlalu berguna. Alasa column 'location' juga di drop adalah dikarenakan column tersebut sudah direpresentasikan oleh column 'city', 'state', 'country'.
+Before we get to the Univariate Analysis stage, we will drop the rows 'Unnamed: 0', 'img_s', 'img_m', 'img_l', 'Summary', 'location' because those columns are not very useful. The reason the 'location' column is also dropped is that the column is already represented by the 'city', 'state', 'country' columns.
 
 ## Univariate Analysis
-Sebelum kita masuk ke dalam tahap Data Preparation, kita bisa memasuki tahap Data Analysis terlebih dahulu untuk mengetahui data pada dataset ini. Pada tahap ini saya akan menggunakan teknik Univariate Data Analysis. Teknik ini adalah teknik paling dasar untuk menganalysis data. Secara singkat Uni berarti satu, yang berarti menganalysis data secara terpisah (satu per satu). Tujuannya adalah untuk melihat dan memberikan insight mengenai data kita.
+Before we enter the Data Preparation stage, we can enter the Data Analysis stage first to find out the data in this dataset. At this stage, I will use the Univariate Data Analysis technique. This technique is the most basic technique for analyzing data. In short, Uni means one, which means analyzing data separately (one by one). Its purpose is to view and provide insight into our data.
 
-![hasilanalysis](https://drive.google.com/uc?export=view&id=181cwBBJIxJ1KR0wxl5xlGAeTXNpNRj7g)
+![analysis results](https://drive.google.com/uc?export=view&id=181cwBBJIxJ1KR0wxl5xlGAeTXNpNRj7g)
 
-Kita dapat simpulkan bahwa column 'city', 'state', dan 'country' terdapat nilai yang bernilai NaN, ini berarti pada column tersebut terdapat missing value. Jika kita perhatikan lagi kita bisa lihat bahwa pada column 'Language', dan 'Category' juga terdapat missing value yang direpresentasikan dengan nilai '9', nilai tersebut dapat dibilang missing value dikarenakan tidak mungkin column 'Language', dan 'Category' memiliki nilai yang sama yaitu '9'. Jumlah dari colum yang memiliki nilai '9' ini juga cukup banyak yaitu sebesar 176176. Kita akan tangani semua missing value ini pada tahap **Data Cleaning**.
+We can conclude that the 'city', 'state', and 'country' columns have values ​​that are NaN, this means that these columns have missing values. If we look again we can see that in the column 'Language', and 'Category' there is also a missing value which is represented by the value '9', this value can be said to be a missing value because it is impossible for the column 'Language', and 'Category' to have a value. which is '9'. The number of columns that have a value of '9' is also quite large, namely 176176. We will handle all these missing values ​​at the **Data Cleaning** stage.
 
 ## Data Preprocessing
-Pada tahap Data Preprocessing disini saya tidak akan melakukan teknik-teknik untuk Data Preprocessing karena dataset yang saya gunakan ini sudah tergabung semua, atau bisa dibilang siap digunakan dan hanya perlu melakukan Data Cleaning dari missing value. Oleh karena itu disini saya tidak akan melakukan apa-apa selain dari melakukan teknik Sorting dengan fungsi .sort_values [01] dari library Pandas.
+At the Data Preprocessing stage here I will not do any techniques for Data Preprocessing because the dataset I use is already combined, or you could say it is ready to use and only needs to do Data Cleaning of missing values. Therefore, here I will not do anything other than performing the Sorting technique with the .sort_values [01] function from the Pandas library.
 
 ## Data Preparation
-Pada tahap ini kita akan mempersiapkan data untuk dilatih. Persiapan data disini mencangkupi Data Cleaning dan Feature Selection. Mari kita mulai dengan langkah pertama yaitu Data Cleaning.
+At this stage, we will prepare the data for training. Data preparation here includes Data Cleaning and Feature Selection. Let's start with the first step which is Data Cleaning.
 
 ### Data Size Reduction
-Paragraph ini saya tulis pada tahap Modelling. Jadi pada saat saya ingin menghitung cosine similarity dari project ini saya menemukan masalah, yaitu runtime saya terus-menerus mengalami crash dikarenakan RAM usagenya yang melebihi batas maksimal, jika saya mengaktifkan Hardware accelerator GPU, maka akan muncul error bahwa runtime tidak bisa connect dengan GPU pada Back-end. Hal ini bisa saja dikarenakan saya sering menggunakan GPU sehingga menurut [10] "As a result, users who use Colab for long-running computations, or users who have recently used more resources in Colab, are more likely to run into usage limits and have their access to GPUs and TPUs temporarily restricted" atau dapat disimpulkan bahwa jika kita menggunakan resource komputasi lebih banyak akan cenderung mengalami batas penggunaan, ataupun ada faktor-faktor lain yang menyebabkan hal ini. Oleh karena itu saya disini memutuskan untuk mereduksi dataset size dengan cara drop > 50%. Saya sudah mencoba mereduksi < 40% tetapi hasilnya tetap sama yaitu runtime crash.
+I wrote this paragraph at the Modeling stage. So when I wanted to calculate the cosine similarity of this project I found a problem, namely my runtime keeps crashing because the RAM usage exceeds the maximum limit, if I activate the GPU hardware accelerator, an error will appear that the runtime cannot connect to the GPU on Back-end. This could be because I often use the GPU so according to [10] "As a result, users who use Colab for long-running computations, or users who have recently used more resources in Colab, are more likely to run into usage limits and have their access to GPUs and TPUs temporarily restricted" or it can be concluded that if we use more computing resources, we will tend to experience usage limits, or there are other factors that cause this. Therefore, here I decided to reduce the dataset size by dropping > 50%. I've tried reducing < 40% but the result is still the same i.e. runtime crash.
 
-### Data Cleaning
-Seperti yang sudah dibilang pada bagian Univariate Analysis, data kita memiliki missing value yang cukup banyak. Oleh karena itu pada tahap ini kita akan mengani missing value.
+### Data Cleanup
+As mentioned in the Univariate Analysis section, our data has quite a lot of missing values. Therefore, at this stage, we will deal with missing values.
 
-#### Menangani Missing Value
-Kita sudah tahu bahwa missing value terletak pada column 'city', 'state', 'country', 'Language', dan 'Category'. Kedua column 'Language' dan 'Category ini memiliki missing value yang sudah di fill/direpresentasikan dengan nilai '9'. Missing value ini tidak terdeteksi oleh fungsi .isnull() dari library Pandas [02]. Hal ini dikarenakan fungsi .isnull() hanya mendeteksi null value. Nilai null merupakan nilai yang tidak ada nilainya sementara itu missing value pada kedua column ini direpresentasikan dengan '9' yang bertipe Object/String oleh karena itu missing value sudah direpresentasikan dengan nilai apapun yang ada di dalam string tersebut. Teknik tersebut menurut [03] disebut 'Imputation method for categorical columns' atau jika di translasi Metode imputasi untuk kolom categorical. Menurut [03] Salah satu kelebihan teknik ini adalah mencegah hilangnya data dan kekurangannya adalah dapat membuat kinerja menurun saat proses encoding.
+#### Handling Missing Value
+We already know that the missing values ​​are in the 'city', 'state', 'country', 'Language', and 'Category' columns. The two 'Language' and 'Category' columns have missing values ​​that have been filled/represented with the value '9'. This missing value is not detected by the .isnull() function of the Pandas library [02]. This is because the .isnull() function only detects null values. The null value is a value that has no value. The missing value in the second column is represented by '9' which is of type Object/String, therefore the missing value is already represented by any value in the string. The technique according to [03] is called the 'Imputation Method for categorical columns' or if translated the imputation method for categorical columns. According to [03] one of the advantages of this technique is that it prevents data and the disadvantage is that it can make performance decrease during the encoding process.
 
-Menurut [03] juga, salah satu cara untuk menangani hal ini adalah menggantinya dengan category yang paling sering muncul. Namun menurut saya hal ini tidak cocok dikarenakan kita merekomendasikan buku berdasarkan categorynya. Contoh bayangkan kita suka membaca buku berkategori Technology dan di dalam aplikasi/website E-book, kita direkomendasikan mengenai buku Action. Hal tersebut lebih cocok di masukan pada bagian explore bukan bagian rekomendasi untuk anda, sehingga buku yang direkomendasikan oleh sistem tersebut tidak cocok dengan apa yang kita suka. Oleh karena itu kita akan menggunakan teknik Delete Rows with Missing Value menggunakan fungsi .dropna() [04] dari library Pandas.
+According to [03] also, one way to deal with this is to replace it with the category that occurs most frequently. But I don't think this is suitable because we recommend books based on their categories. For example, imagine that we like to read books in the Technology category, and in an E-book application/website, we must be talking about Action books. It is more suitable for input in the exploration section rather than the recommendations section for you, so the books recommended by the system are not a match for what we like. Therefore we will use the Delete Rows with Missing Value technique using the .dropna() [04] function from the Pandas library.
 
-Sebelum kita menghapus row dengan missing value kita perlu ingat bahwa missing value pada column 'Language', dan 'Category' direpresentasikan oleh string yang bernilai '9' oleh karena itu kita harus menjadikan nilai '9' menjadi NaN agar bisa didrop oleh fungsi .dropna(). Kita bisa mengganti nilai tersebut dengan fungsi .replace() dari library Pandas [05].
+Before we delete rows with missing values ​​we need to remember that the missing values ​​in the column 'Language', and 'Category' are represented by the proper string '9' therefore we have to convert the value '9' to NaN so that it can be dropped by the .dropna function (). We can replace that value with the .replace() function from the Pandas library [05].
 
 Output:
 ```
@@ -103,75 +103,76 @@ dtype: int64
 after data cleaning dataset size: 303428
 ```
 
-Setelah kita bersihkan kita bisa lihat bahwa data kita sudah bersih, tetapi kita mengalami data loss lebih dari 40%, yang dapat dibilang cukup signifikan. Selanjutnya kita akan drop semua ISBN yang duplikat, hal ini dilakukan agar hanya ada buku yang unique saja. Kita akan drop dengan fungsi .drop_duplicates() [06]. 
+After we clean we can see that our data is clean, but we experience a data loss of more than 40%, which is quite significant. Next, we will delete all duplicate ISBNs, this is done so that there are only unique books. We will drop it with the .drop_duplicates() function [06].
 
 ### Feature Selection
-Pada tahap ini kita akan memilih feature yang relevan dengan variable target kita.
+At this stage, we will select features that are relevant to our target variable.
 
-#### Memisahkan Feature dari Dataset
-Pertama-tama kita harus konversi data menjadi list terlebih dahulu. Konversi ini dapat kita lakukan dengan fungsi .tolist() [07] dari library NumPy. Sebelum memisahkan feature, kita perlu memilih feature yang akan digunakan terlebih dahulu. Pada project ini saya akan menggunakan column 'isbn', 'book_title', 'book_author', 'publisher', 'Language', dan 'Category'.
+#### Separating Features from Dataset
+First of all, we have to convert the data into a list first. We can do this conversion with the .tolist() function [07] from the NumPy library. Before separating the features, we need to select the features that will be used first. In this project I will use the columns 'ISBN', 'book_title', 'book_author', 'publisher', 'Language', and 'Category'.
 
-Setelah transformasi menjadi list, kita bisa membuat dataframe dengan Pandas. Untuk membuatnya disni kita akan menggunakan dictionary untuk memasangkannya dengan key-value. Hasilnya sebagai berikut:
+After transforming it into a list, we can create a data frame with Pandas. To create it here we will use a dictionary to pair it with key values. The results are as follows:
 
 ![featuredataset](https://drive.google.com/uc?export=view&id=1CDoN2wdVi3iXNHBFv6j_LE_UmuhxvXmb)
 
-Tahap selanjutnya adalah tahap yang ditunggu-tunggu yaitu Modelling.
+The next stage is the long-awaited stage, namely Modeling.
 
 ## Modeling
-Seperti yang kita ketahui bahwa output dari system rekomendasi adalah *Top-N* yang berarti tidak seperti model classification, regression, dll yang hanya memiliki satu output yang berupa prediksi. Lain halnya dengan sistem rekomendasi yang menyajikan banyak output. Contoh dari system rekomendasi adalah Youtube, video-video yang direkomendasikan Youtube adalah salah satu contoh output Top-N. Mengapa sistem rekomendasi menyajikan output berupa Top-N? Jawabannya sangat simpel yaitu, tidak mungkin system merekomendasikan hanya satu hal, ini dikarenakan jika kita tidak suka dengan rekomendasinya maka apa rekomendasi selanjutnya? Jadi jawabannya adalah agar kita bisa memilih mana yang kita suka.
+As we know the output of the recommendation system is *Top-N* which means it is not like classification, regression, etc. models which only have one output which is a prediction. It is different from the recommendation system which presents many outputs. An example of a recommendation system is Youtube, the videos recommended by Youtube are examples of Top-N output. Why does the recommendation system provide Top-N output? The answer is very simple, namely, it is impossible for the system to recommend only one thing, this is because if we don't like the recommendation, what is the next recommendation? So the answer is so that we can choose which one we like.
 
 ### Vectorizer
-Pertama-tama kita harus mulai dengan Vectorizer, pada project ini kita akan menggunakan CountVectorizer dari [08] library Scikit Learn. Sebenarnya kita bisa menggunakan TF-IDF Vectorizer tetapi disini saya menggunakan CountVectorizer dikarenakan TF-IDF bekerja dengan memberikan skor terhadap suatu kata, kata yang sering muncul dan jarang muncul akan diberikan skor berbeda, skor tersebut berfungsi untuk menentukan makna ataupun konteks dari suatu kalimat. Pada kasus ini kita tidak perlu sampai memahami makna dari teks, karena disini kita hanya perlu untuk memperoleh informasi sebanyak mungkin untuk menghitung derajat kemiripan dengan cosine similarity. Maka dari itu disini kita akan menggunakan CountVectorizer.
+First of all, we have to start with Vectorizer, in this project, we will use CountVectorizer from [08] Scikit Learn library. Actually, we can use the TF-IDF Vectorizer but here I use the CountVectorizer because TF-IDF works by scoring a word, words that often appear and rarely appear will be given a different score, the score serves to determine the meaning or context of a sentence. In this case, we do not need to understand the meaning of the text, because here we only need to obtain as much information as possible to calculate the degree of similarity with cosine similarity. Therefore here we will use the CountVectorizer.
 
-Pada kasus ini saya akan gunakan Category sebagai acuan untuk merekomendasikan buku. Pertanyaannya, apasih tujuan vectorizer? Tujuan dari vectorizer pada recommendation system adalah untuk mencari representasi yang tepat untuk merepresentasikan category.
+In this case, I will use Category as a reference to recommend books. The question is, what is the purpose of a vectorizer? The purpose of the vectorizer in the recommendation system is to find the right representation to represent the category.
 
-Untuk memulai pastinya kita harus mengimpor library [08] terlebih dahulu, tetapi karena saya sudah mengimpor semua library pada awal cell, maka kita tidak perlu melakukan import ulang.
+Before we start, of course, we have to import the CountVectorizer library [08] first, but since I've imported all libraries at the beginning of the cell, we don't need to re-import.
 
-Pertama-tama kita harus mulai dengan Vectorizer, pada project ini kita akan gunakan TF-IDF Vectorizer [08] dari library Scikit Learn. Pada kasus ini saya akan gunakan Category sebagai acuan untuk merekomendasikan buku. Pertanyaannya, apasih tujuan vectorizer? Tujuan dari vectorizer pada recommendation system adalah untuk mencari representasi yang tepat untuk merepresentasikan category. Selanjutnya kita bisa merepresentasikan CountVectorizer dengan variable bernama Vec. Lalu vectorizer akan mengonversi kumpulan teks menjadi matriks jumlah token pada column category, agar vectorizer mengonversi teks kita harus gunakan .fit(). Setelah semuanya selesai kita bisa transformasi ke dalam bentuk matrix, dan agar vector menjadi bentuk matrix kita harus transformasi lagi menjadi dense dengan fungsi .todense().
+First of all, we have to start with the Vectorizer, in this project, we will use the CountVectorizer [08] from the Scikit Learn library. In this case, I will use Category as a reference to recommend books. The question is, what is the purpose of a vectorizer? The purpose of the vectorizer in the recommendation system is to find the right representation to represent the category. Next, we can represent the CountVectorizer with a variable named Vec. Then the vectorizer will convert the text set into a matrix of the number of tokens in the category column so that the vectorizer converts text we must use .fit(). After everything is done we can transform it into a matrix form, and in order for the vector to become a matrix form, we have to transform again into a dense with the .todense() function.
 
 ### Cosine Similarity
-Cosine similarity menghitung derajat kesamaan antara masing-masing category. Kita dapat menghitung cosine similarity dengan fungsi cosine_similarity() [09] dari library Scikit Learn. Output dari fungsi ini berupa matrix array sehingga kita bisa menyajikannya dalam bentuk dataframe.
+Cosine similarity calculates the degree of similarity between each category. We can calculate cosine similarity with the function cosine_similarity() [09] from the Scikit Learn library. The output of this function is a matrix array so that we can present it in the form of a data frame.
 
 ![cosdataframe](https://drive.google.com/uc?export=view&id=1v9-0-H3T6c2CSqkvqN2ZOtlgQNItf1PB)
 
-Kita dapat membuat fungsi untuk mengeluarkan output Top-N. Untuk menggunakan fungsi tersebut kita dapat menggunakan salah satu title dari buku kemudian kita bisa memilih nilai Top-N-nya yang direpresentasi dengan K. Berikut adalah salah satu contoh dari output Top-N:
+We can create a function to output Top-N. To use this function, we can use one of the titles from the book, and then we can choose the Top-N value which is represented by K. Here is an example of the Top-N output:
 
 ![recommendations](https://drive.google.com/uc?export=view&id=17QxLvxrfOYzM2yesO4OTbiCYNAEU1hMr)
 
 ## Evaluation
-Kita sudah membuat model untuk merekomendasikan buku dengan teknik Content Based Filtering. Sekarang kita berada di tahap evaluasi. Sekarang kita bisa menjawab semua permasalahan yang telah dijelaskan pada bagian Problem Statement:
+We have created a model to recommend books with Content-Based Filtering techniques. Now we are in the evaluation stage. Now we can answer all the problems described in the Problem Statement section:
 
-- Bagaimana membuat sistem rekomendasi dengan teknik **content based filtering**?
-- Bagaimana kecocokan rekomendasi buku yang diberikan dengan kesesuaian user?
-- Bagaimana sistem rekomendasi dapat membantu dibidang bisnis?
+- How to make a recommendation system with the **content-based filtering** technique?
+- How is the suitability of the book recommendations given to the suitability of the user?
+- How can a recommendation system help in the business sector?
 
-Kita sudah membuat sistem rekomendasi dengan teknik Content Based Filtering. Sekarang kita bisa mendapatkan rekomendasi dengan fungsi get_recommendations(). Jika kita test fungsinya dengan judul buku 'Dragonshadow' kita bisa lihat output sebagai berikut:
+We have created a recommendation system with the Content-Based Filtering technique. Now we can get recommendations with the get_recommendations() function. If we test the function with the book title 'Dragonshadow' we can see the output as follows:
 
 ![dragonshadowcategory](https://drive.google.com/uc?export=view&id=1MLLLVpqO-QwyWZds-O0SxTk38pIl2MZE)
 
-Kita bisa lihat bahwa buku tersebut termasuk ke dalam category 'Fiction' atau fiksi, lalu hasil yang direkomendasikan oleh model juga merupakan category fiction, ini mengindikasikan kecocokan kesukaan user dengan yang direkomendasikan. Jadi kita dapat simpulkan bahwa buku yang direkomendasikan cocok bagi user sehingga user bisa membeli buku tersebut, sehingga bisnis toko buku kita bisa mendapatkan keuntungan dari user-user yang suka dengan hasil rekomendasi sistem.
+We can see that the book belongs to the category 'Fiction' or fiction, then the results recommended by the model are also category fiction, this indicates a match between user preferences and recommended ones. So we can conclude that the recommended book is suitable for the user so that the user can buy the book so that our bookstore business can benefit from users who like the results of the system recommendation.
 
-Selanjutnya kita akan mengukur presisi dengan Precision Metric. Metrik ini dapat kita peroleh dengan cara membagi rekomendasi yang relevan dengan jumlah rekomendasi. Pertanyaannya bagaimana cara kita mengetahui rekomendasi yang relevan dengan yang tidak? Untuk mengetahuinya kita bisa lihat dari category rekomendasi apakah cocok dengan category yang kita tuliskan sebagai Input. Pada kasus ini kita bisa lihat pada gambar diatas bahwa semua rekomendasi kita memiliki category yang sama, yaitu Fiction. 
+Next, we will measure precision with Precision Metric. We can obtain this metric by dividing the relevant recommendations by the number of recommendations. The question is how do we know which recommendations are relevant and which are not? To find out, we can see from the recommendation category whether it matches the category we wrote as Input. In this case, we can see in the image above that all of our recommendations have the same category, namely Fiction.
 
-Kita akan menggunakan Precision Metric untuk mengukur presisi dari sistem rekomendasi. Metrik ini bekerja dengan membagi jumlah rekomendasi yang relevan dengan jumlah rekomendasi lalu kita mengkalikannya dengan 100 untuk menjadikannya sebagai persentase, atau secara matematis ditulis sebagai berikut:
+We will use Precision Metric to measure the precision of the recommendation system. This metric works by dividing the number of relevant recommendations by the number of recommendations and then we multiply by 100 to make it a percentage, or mathematically written as follows:
 
 ```
 precision percentage = relevant / number of top-n * 100
 ```
 
-Secara teknis metrik ini bekerja dengan cara membandingkan jumlah rekomendasi yang relevan dengan jumlah seluruh rekomendasi sehingga kita bisa mendapatkan perbandingan. Sebagai contoh bayangkan kita memiliki jumlah rekomendasi yang relevan sebesar 9 dan jumlah seluruh rekomendasi kita adalah 13, sehingga kita mendapatkan perbandingan 9/13. Seperti yang kita ketahui untuk menjadikannya persentase kita perlu mengkalikan perbandingan dengan 100 sehingga kita memiliki bentuk akhir 9/13*100, lalu kita bisa menerapkan matematika dasar (kabataku) untuk mendapatkan output presisi dalam bentuk persentase sebesar 69.2%.
+Technically this metric works by comparing the number of relevant recommendations with the total number of recommendations so that we can get a comparison. For example imagine we have the number of relevant recommendations of 9 and our total number of recommendations is 13, so we get a 9/13 comparison. As we know to make it a percentage we need to multiply the ratio by 100 so we have the final form 9/13*100, then we can apply basic math arithmetics to get a precision output in the form of a percentage of 69.2%.
 
-Kita daoat membuat fungsi untuk mengukur presisi menggunakan Precision Metric. Fungsi yang kita buat ini akan membutuhkan dua input, antara lain Number of Relevant Recommendations dan Number of Top-N. Input-input tersebut kemudian dibagi (sesuai dengan rumus diatas) lalu dikali dengan 100 agar menjadi satuan persen. Berikut adalah salah satu output persentase dari presisi sistem:
+We can create a function to measure precision using Precision Metric. The function we created will require two inputs, including the Number of Relevant Recommendations and the Number of Top-N. The inputs are then divided (according to the formula above) and then multiplied by 100 to become a percent unit. Here is one of the output percentages of the system precision:
 
 ```
 Recommendation System Precision Percentage: 100.0%
 ```
 
-Kita bisa lihat bahwa presisi sistem kita mencapai 100%! Sampai disini kita sudah melihat bahwa system kita dapat merekomendasikan buku yang relevan dengan kesukaan si user/pelanggan.
+We can see that our system precision reaches 100%! So far, we have seen that our system can recommend books that are relevant to the preferences of the user/customer.
 
-**---Ini adalah bagian akhir laporan---**
+**All parts of the document are translated to English**
 
-# Daftar Referensi
+# Reference List
+
 <br />[[Kaggle]] Bhatia, R. (2021, February 17). Book-Crossing: User review ratings (Version 3) [A collection of book ratings]. Kaggle. https://www.kaggle.com/ruchi798/bookcrossing-dataset
 <br />[[01]] Pandas Pydata. (n.d.-c). pandas.DataFrame.sort_values. Pandas. Retrieved January 16, 2022, from https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_values.html
 <br />[[02]] Pandas Pydata. (n.d.-c). pandas.isnull. Pandas. Retrieved January 16, 2022, from https://pandas.pydata.org/docs/reference/api/pandas.isnull.html
@@ -180,7 +181,7 @@ Kita bisa lihat bahwa presisi sistem kita mencapai 100%! Sampai disini kita suda
 <br />[[05]] Panda Pydata. (n.d.). pandas.DataFrame.replace. Pandas. Retrieved January 16, 2022, from https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html
 <br />[[06]] Pandas Pydata. (n.d.). pandas.DataFrame.drop_duplicates. Pandas. Retrieved January 16, 2022, from https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html
 <br />[[07]] NumPy. (n.d.). numpy.ndarray.tolist. Retrieved January 16, 2022, from https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tolist.html
-<br />[[08]] Scikit Learn. (n.d.-a). sklearn.feature_extraction.text.TfidfVectorizer. Retrieved January 16, 2022, from https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+<br />[[08]] Scikit Learn. (n.d.-a). sklearn.feature_extraction.text.CountVectorizer. Retrieved January 16, 2022, from https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 <br />[[09]] Scikit Learn. (n.d.). sklearn.metrics.pairwise.cosine_similarity. Retrieved January 16, 2022, from http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html
 <br />[[10]] Google. (n.d.). Colaboratory FAQ. Google Research. Retrieved January 16, 2022, from https://research.google.com/colaboratory/faq.html
 <br />[[11]] Bola. (2021, February 16). 7 Manfaat Membaca Buku yang Masih Belum Banyak Diketahui. Retrieved January 16, 2022, from https://www.bola.com/ragam/read/4484476/7-manfaat-membaca-buku-yang-masih-belum-banyak-diketahui
@@ -196,7 +197,7 @@ Kita bisa lihat bahwa presisi sistem kita mencapai 100%! Sampai disini kita suda
 [05]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html
 [06]: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html
 [07]: https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tolist.html
-[08]: https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+[08]: https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html
 [09]: http://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html
 [10]: https://research.google.com/colaboratory/faq.html
 [11]: https://www.bola.com/ragam/read/4484476/7-manfaat-membaca-buku-yang-masih-belum-banyak-diketahui
